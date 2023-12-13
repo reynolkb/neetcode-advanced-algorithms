@@ -2,7 +2,8 @@ from typing import List
 
 
 class Solution:
-    def maxTurbulenceSize(self, arr: List[int]) -> int:
+    @staticmethod
+    def max_turbulence_size(arr: List[int]) -> int:
         # Initialize two pointers: 'l' (left) and 'r' (right)
         l, r = 0, 1
         # Initialize 'res' to store the maximum turbulence size, and 'prev' to store the previous comparison sign
@@ -44,7 +45,7 @@ class Solution:
 def main():
     arr = [9, 4, 2, 10, 7, 8, 8, 1, 9]
     solution = Solution()
-    result = solution.max_subarray_sum_circular(arr)
+    result = solution.max_turbulence_size(arr)
     print("Output:", result)
 
 
