@@ -11,7 +11,11 @@ class NumArray:
             self.prefix.append(cur)
 
     def sum_range(self, left: int, right: int) -> int:
+        # You don't need to adjust self.prefix[right] because it already represents what you need, Teh total sum up
+        # to and including the right element.
         r = self.prefix[right]
+        # You subtract 1 from left because self.prefix[left] gives you the sum up to and including left. But you want
+        # the sum of elements starting from left, so you need to subtract everything before it.
         l = self.prefix[left - 1] if left > 0 else 0
         return r - l
 
